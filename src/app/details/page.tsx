@@ -1,205 +1,307 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
-export default function page() {
-  return (
-    <div className='w-full flex'>
-     <div className="first hidden sm:flex w-[25%]">
-        <Image src={'/Nav Bar Side.png'} alt='' width={360} height={1600}/>
-      </div>
-      <div className="sec w-full sm:w-[75%] bg-[#f6f7f9] p-4 sm:p-6  flex flex-col gap-10 font-[family-name:var(--font-geist-sans)]">
-        <section className=' w-full flex flex-col md:flex-row gap-5  items-center justify-around'>
-            <div className='first flex flex-col gap-4 w-full  lg:max-w-[470px]  lg:max-h-[508px]'>
-                <div>
-                    <Image src={'/View.png'} alt='' width={492} height={360}/>
+import Button from "@/components/Button"
+import Card from "@/components/Card"
+import Header from "@/components/Header"
+import IconButton from "@/components/Navbar/IconButton"
+import { CARCARD } from "@/types/types"
+import Image from "next/image"
+import Link from "next/link"
 
+
+const carDetails: CARCARD[] = [
+    {
+        name: 'Sportage',
+        currPrice: '$99.00/',
+        oldPrice: '$200.00/',
+        cardType: 'mobile',
+        image: '/images/jeep.png',
+        heart: false,
+        carType: 'Hatchback',
+        icons: true,
+    },
+    {
+        name: 'Rolls- Royce',
+        currPrice: '$99.00/',
+        oldPrice: '$200.00/',
+        cardType: 'mobile',
+        image: '/images/rollsroyce.png',
+        heart: true,
+        carType: 'Sedan',
+        icons: true,
+    },
+    {
+        name: 'Koenigsegg',
+        currPrice: '$99.00/',
+        image: '/images/car2.svg',
+        carType: 'Manual',
+        heart: false,
+        icons: true,
+        oldPrice: '$200.00/',
+        cardType: 'mobile',
+    },
+    {
+        name: 'Rolls- Royce',
+        currPrice: '$99.00/',
+        oldPrice: '$200.00/',
+        cardType: 'mobile',
+        image: '/images/rollsroyce.png',
+        heart: true,
+        carType: 'Sedan',
+        icons: true,
+    }
+    
+    
+]
+const Category = () => {
+    return (
+        <div className="flex justify-between ">
+            <div className="min-w-72 border-t hidden xl:flex flex-col p-6 gap-6">
+                <div className="text-xs opacity-50">TYPE</div>
+
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/checkbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    Sports <span className="opacity-50">(12)</span>
                 </div>
-                <div className=' flex items-center justify-between gap-2 lg:gap-0'>
-                <Image src={'/View 1.png'} alt='' width={148} height={124}/>
-                <Image src={'/View 2.png'} alt='' width={148} height={124}/>
-                <Image src={'/View 3.png'} alt='' width={148} height={124}/>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/checkbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    SUV <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    MPV <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    Sedan <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    Coupe <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    Hatchback <span className="opacity-50">(12)</span>
+                </div>
+
+                <div className="text-xs opacity-50">CAPACITY</div>
+
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/checkbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    2 Person <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    4 Person <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/uncheckedbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    6 Person <span className="opacity-50">(12)</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                    <Image className="size-6" src='/images/checkbox.svg' alt="checkbox-icon" width={100} height={100} />
+                    8 Person <span className="opacity-50">(12)</span>
+                </div>
+
+                <div className="text-xs opacity-50">PRICE</div>
+
+
+                <div className="flex gap-2 items-start flex-col">
+                    <Image className="w-full" src='/images/seekbar.svg' alt="checkbox-icon" width={100} height={100} />
+                    Max. $100.00
                 </div>
             </div>
-            <div className="flex flex-col w-full  lg:max-w-[492px] h-auto lg:max-h-[508px] bg-white justify-between rounded-xl shadow-md">
-  <Image
-    src={"/Detail Car (1).png"}
-    alt="Detail Car"
-    width={492}
-    height={392}
-    className="w-full h-auto rounded-t-xl object-cover"
-  />
+            <div className="md:px-16 px-6 py-8 bg-[#f6f7f9] w-full">
 
-  <div className="p-4 flex  items-center gap-4">
-    <div className="flex items-center justify-between w-full">
-      <h1 className="font-bold text-lg sm:text-xl lg:text-2xl">
-        $80.00 / <span className="text-gray-500 text-sm lg:text-base">day $100.00</span>
-      </h1>
-    </div>
-    <Link href={"/payment"}>
-      <button className="bg-[#3563e9] hover:bg-[#264ac6] transition-all p-3 sm:p-4 px-6 sm:px-10 text-nowrap  text-white rounded-md w-full max-w-[180px] text-center">
-        Rent Now
-      </button>
-    </Link>
-  </div>
-</div>
-        </section>
-        <section className=' w-full flex items-center justify-center'>
-            <Image src={'/Reviews.png'} alt='' width={1010} height={452} className=' hidden md:flex'/>
-            <Image src={'/Reviews (1).png'} alt='' width={492} height={384} className=' md:hidden'/>
-        </section>
-        <section className="popular w-full flex flex-col gap-5">
-        <div className="first w-full flex items-center justify-between px-10 xl:px-14">
-          <h1 className="text-gray-500 text-lg sm:text-xl">Recent Car</h1>
-          <Link href={"/categories"}>
-            <h1 className="text-[#3563e9] font-bold hover:underline decoration-[#3563e9]">
-              View All
-            </h1>
-          </Link>
+                <div className="flex items-start gap-6 flex-col lg:flex-row">
+                    <div className="gap-6 flex flex-col w-full">
+                        <div className={`relative bg-blue-600 text-white p-6 md:p-8 rounded-lg min-h-[20rem]`}>
+                            {/* Content Section */}
+                            <div className="relative z-10 flex flex-col gap-6 md:max-w-lg">
+                                <h1 className="text-2xl sm:text-4xl leading-tight max-w-sm">
+                                    Sports car with the best design and acceleration
+                                </h1>
+                                <p className="text-sm md:text-base text-blue-100 max-w-sm">
+                                    Safety and comfort while driving a
+                                    futuristic and elegant sports car
+                                </p>
+                            </div>
+
+                            {/* Car Image */}
+                            <Image
+                                src="/images/othercar.png"
+                                alt="Car Rental"
+                                className="object-contain object-bottom"
+                                fill
+                            />
+                        </div>
+                        <div className="flex gap-2 sm:gap-6">
+                            <div className="bg-white ring-2 rounded-lg ring-blue-600 p-1 max-h-[116px] w-1/3 min-w-[32%] sm:min-w-28 max-w-[144px]">
+                                <div className={`bg-blue-600 rounded-lg size-full relative`}>
+                                    {/* Car Image */}
+                                    <Image
+                                        src="/images/othercar.png"
+                                        alt="Car Rental"
+                                        className="object-contain size-40 object-top"
+                                        width={200}
+                                        height={200}
+
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={`relative w-1/3 min-w-[32%] sm:min-w-28 max-w-[148px] max-h-[124px] p-6 md:p-8 rounded-lg`}>
+                                {/* Car Image */}
+                                <Image
+                                    src="/images/carhandle.png"
+                                    alt="Car Rental"
+                                    className="object-fit object-top"
+                                    fill
+                                />
+                            </div>
+                            <div className={`relative w-1/3 min-w-[32%] sm:min-w-28 max-w-[148px] max-h-[124px] p-6 md:p-8 rounded-lg`}>
+                                {/* Car Image */}
+                                <Image
+                                    src="/images/carseats.png"
+                                    alt="Car Rental"
+                                    className="object-fit object-top"
+                                    fill
+                                />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="h-full">
+                        <div className="font-bold flex h-full bg-white justify-between bg-background flex-col gap-6 rounded-lg p-6 min-h-[28.8rem]">
+                            <div className="relative flex flex-col gap-2" >
+                                <div className="text-xl">Nissan GT - R</div>
+                                <div className='text-xs opacity-50 flex gap-2'>
+                                    <Image className="w-20" src={'/images/stars.png'} alt="stars-icon" width={100} height={100} />
+                                    440+ Reviewer
+                                </div>
+
+                                <div className="absolute right-0 flex flex-col gap-2 top-0">
+                                    <Image className="size-5 rounded-full bg-background" src={'/images/heart.svg'} alt="heart-icon" width={100} height={100} />
+                                </div>
+                            </div>
+                            <p className="text-gray-800 font-normal">
+                                NISMO has become the embodiment of Nissans outstanding performance, inspired by the most unforgiving proving ground, the race track.
+                            </p>
+                            <div className="opacity-72 gap-4 font-thin flex flex-wrap mt-2">
+                                <span>Type Car</span>
+                                <span className="font-bold">Sport</span>
+                                <span>Capacity</span>
+                                <span className="font-bold">2 Person</span>
+                                <span>Steering</span>
+                                <span className="font-bold">Manual</span>
+                                <span>Gasoline</span>
+                                <span className="font-bold">70L</span>
+                            </div>
+
+
+                            <div className='flex justify-between mt-6'>
+                                <div className='flex flex-col'>
+                                    <span className="text-black text-2xl">$80.00/  <span className='text-sm text-gray-700'>day</span></span>
+                                    <span className="text-gray-500 line-through">$100.00 <span className='text-sm text-gray-600'>day</span></span>
+                                </div>
+                                <Link href="/payment">
+                                <Button text='Add To Rent' classes='bg-blue-600'/>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-background my-6 p-6 flex flex-col gap-6 rounded-lg">
+                    <div className="flex gap-3 items-center ">
+                        <div className="font-bold">Reviews</div>
+                        <div className="py-1 text-sm px-3 text-white bg-blue-600 rounded-md">13</div>
+                    </div>
+
+                    <div>
+                        <div className="flex justify-between">
+                            <div className="flex gap-3">
+                                <IconButton icon="/images/user.png" redDot={false} />
+                                <div className="flex flex-col gap-1">
+                                    <div className="font-bold">Alex Stanton</div>
+                                    <div className="text-xs opacity-50">CEO at Bukalapak</div>
+                                </div>
+                            </div>
+                            <div className='text-xs flex flex-col items-end gap-2'>
+                                21 July 2022
+                                <Image className="w-20" src={'/images/stars.png'} alt="stars-icon" width={100} height={100} />
+                            </div>
+                        </div>
+                        <p className="text-xs font-normal  ml-14 mt-4 text-gray-700">
+                            We are very happy with the service from the MORENT App. Morent has a low price and also a large variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.
+                        </p>
+                    </div>
+                    <div>
+                        <div className="flex justify-between">
+                            <div className="flex gap-3">
+                                <IconButton icon="/images/user.png" redDot={false} />
+                                <div className="flex flex-col gap-1">
+                                    <div className="font-bold">Skylar Dias</div>
+                                    <div className="text-xs opacity-50">CEO at Amazon</div>
+                                </div>
+                            </div>
+                            <div className='text-xs flex flex-col items-end gap-2'>
+                                21 July 2022
+                                <Image className="w-20" src={'/images/stars.png'} alt="stars-icon" width={100} height={100} />
+                            </div>
+                        </div>
+                        <p className="text-xs font-normal text-gray-700 ml-14 mt-4">
+                            We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.
+                        </p>
+                    </div>
+
+                    <div className="flex gap-3 justify-center text-gray-800">
+                        Show All
+                        <Image className="w-4" src={'/images/arrow-down.svg'} alt="arrow-icon" width={100} height={100} />
+
+                    </div>
+                </div>
+                <Header showViewAll text="Recent Car" />
+                <div className="flex justify-start 2xl:justify-center overflow-hidden">
+                    <div className="flex gap-8 py-6  max-w-[1308px] flex-wrap">
+
+                        {carDetails.map((obj, key) => (
+                            <Card key={key} data={{
+                                cardType: 'mobile-now',
+                                name: obj.name,
+                                currPrice: obj.currPrice,
+                                image: obj.image,
+                                carType: obj.carType,
+                                heart: obj.heart,
+                                icons: obj.icons,
+                                oldPrice: obj.oldPrice,
+                            }} />
+                        ))}
+
+                    </div>
+                </div>
+                <Header showViewAll text="Recommendation Car" />
+                <div className="flex justify-start 2xl:justify-center overflow-hidden">
+                    <div className="flex gap-8 py-6  max-w-[1308px] flex-wrap">
+
+                        {carDetails.map((obj, key) => (
+                            <Card key={key} data={{
+                                cardType: 'mobile-now',
+                                name: obj.name,
+                                currPrice: obj.currPrice,
+                                image: obj.image,
+                                carType: obj.carType,
+                                heart: obj.heart,
+                                icons: obj.icons,
+                                oldPrice: obj.oldPrice,
+                            }} />
+                        ))}
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div className="sec grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:px-5 ">
-        
-          <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                Koenigsegg <Image src={"/heart.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>Sport</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/car.png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button>
-            </CardFooter>
-          </Card>
-
-         
-          <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                NissanGT - R <Image src={"/heart 2.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>Sport</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/car (1).png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <Link href={'/payment'}><button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button></Link>
-            </CardFooter>
-          </Card>
-
-        
-          <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                Rolls-Royce <Image src={"/heart.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>Sedan</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/suv.png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button>
-            </CardFooter>
-          </Card>
-        </div>
-      </section>
-      <section className="popular w-full flex flex-col gap-5">
-        <div className="first w-full flex items-center justify-between px-10 xl:px-14">
-          <h1 className="text-gray-500 text-lg sm:text-xl">Recomendation Car</h1>
-          <Link href={"/categories"}>
-            <h1 className="text-[#3563e9] font-bold hover:underline decoration-[#3563e9]">
-              View All
-            </h1>
-          </Link>
-        </div>
-        <div className="sec grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:px-5 ">
-        
-        <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                All New Rush <Image src={"/heart.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>SUV</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/suv.png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button>
-            </CardFooter>
-          </Card>
-
-          
-          <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                CR - V <Image src={"/heart 2.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>SUV</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/suv.png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button>
-            </CardFooter>
-          </Card>
-
-          
-          <Card className="w-full max-w-[304px] mx-auto h-auto flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="w-full flex items-center justify-between">
-                All New Terios <Image src={"/heart.png"} alt="" width={20} height={20} />
-              </CardTitle>
-              <CardDescription>SUV</CardDescription>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center justify-center gap-4">
-              <Image src={"/suv (4).png"} alt="" width={220} height={68} />
-              <Image src={"/Spesification.png"} alt="" width={256} height={24} />
-            </CardContent>
-            <CardFooter className="w-full flex items-center justify-between">
-              <p>
-                $99.00/<span className="text-gray-500">day</span>
-              </p>
-              <button className="bg-[#3563e9] p-2 text-white rounded-md">Rent Now</button>
-            </CardFooter>
-          </Card>
-
-        </div>
-      </section>
-      </div>
-    </div>
-  )
+    )
 }
+
+export default Category
