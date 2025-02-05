@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <IconButton icon="/images/.png" redDot={false} />
+          <IconButton icon="/images/image (3).png" redDot={false} />
         </div>
        
       </div>

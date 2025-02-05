@@ -14,7 +14,7 @@ export const product = {
       title: 'Type',
     },
     {
-      name: 'fuelCapacity',  // Changed from 'fuel-capacity' to 'fuel_capacity'
+      name: 'fuel_capacity',  // Changed from 'fuel-capacity' to 'fuel_capacity'
       type: 'string',
       title: 'Fuel Capacity',
     },
@@ -24,12 +24,12 @@ export const product = {
       title: 'Transmission',
     },
     {
-      name: 'seatingCapacity',  // Changed from 'seating-capacity' to 'seating_capacity'
+      name: 'seating_Capacity',  // Changed from 'seating-capacity' to 'seating_capacity'
       type: 'number',
       title: 'Seating Capacity',
     },
     {
-      name: 'pricePerDay',  // Changed from 'price-per-day' to 'price_per_day'
+      name: 'price_per_day',  // Changed from 'price-per-day' to 'price_per_day'
       type: 'number',
       title: 'Price Per Day',
     },

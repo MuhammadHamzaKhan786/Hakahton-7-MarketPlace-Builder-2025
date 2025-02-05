@@ -161,23 +161,8 @@ const cars: Car[] = [
     availability: true,
     description: "A high-performance gasoline sedan with advanced self-driving capabilities.",
   },
-  //  {
-  //   id: 9,
-  //   name: "lorem",
-  //   price: 150.0,
-  //   discountPrice: 130.0,
-  //   brand: "Tesla",
-  //   carType: "Electric",
-  //   year: 2023,
-  //   engine: "Electric",
-  //   transmission: "Automatic",
-  //   seatingCapacity: 5,
-  //   safety: ["Airbags", "ABS", "Autopilot"],
-  //   specialFeatures: ["Sunroof", "Touchscreen Display", "Adaptive Cruise Control"],
-  //   gallery: ["/images/n5.jpeg", "/images/n5.jpeg", "/images/n5.jpeg"],
-  //   availability: true,
-  //   description: "A high-performance electric sedan with advanced self-driving capabilities.",
-  // }
+   
+
 ];
 
 // Fetch car details by ID
@@ -245,11 +230,15 @@ const CarDetailPage = ({ params }: { params: { id: string } }) => {
                 <span className="text-red-600 font-bold">${car.discountPrice}</span>
               </p>
             </div>
+            
 
+            
             <div className="flex gap-4 mt-4 flex-wrap">
+            <Link href="/payment">
               <button className="py-3 px-6 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition w-full sm:w-auto">
                 Book Now
               </button>
+              </Link>
 
                        <Link href="/testdrive">
                   <button className="py-3 px-6 text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 transition w-full sm:w-auto">

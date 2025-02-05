@@ -100,7 +100,7 @@ const cars: Car[] = [
     transmission: "Automatic",
     capacity: "2People",
   },
- 
+
 ];
 
 const Filter = () => {

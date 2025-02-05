@@ -23,9 +23,10 @@ export const Navigation: React.FC = () => {
       link: "/setting"
     },
     {
-      src: "/images/Profil.png",
-      alt: "Profile ",
-      className: "w-11 rounded-[90px]",
+    
+      src:"/images/Profil.png",
+      alt:"Profile", 
+      className:"w-11 rounded-[90px]", 
       link: "/user"
     },
   ];
@@ -47,14 +48,7 @@ export const Navigation: React.FC = () => {
         <NavigationIcons icons={navigationIcons} />
       </div>
 
-      {/* Login Button */}
-      <div>
-        <a href="/login">
-          <button className="px-4 py-2 bg-[#3563E9] text-white rounded-md hover:bg-[#1e49b3] transition duration-200">
-            Login
-          </button>
-        </a>
-      </div>
+    
     </div>
   );
 };

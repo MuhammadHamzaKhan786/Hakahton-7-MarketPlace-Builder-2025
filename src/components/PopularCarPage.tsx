@@ -107,46 +107,51 @@ export const CarCard: React.FC<CarCardProps> = ({
 export const PopularCarPage: React.FC = () => {
   const cars = [
     {
-      name: "Koenigsegg",
-      type: "Electric",
-      image: "/images/p1.png",
-      fuelCapacity: "500 KM",
-      transmission: "Manual",
-      capacity: "2 People",
-      price: 120.00,
-      favoriteIcon: "/images/red.png",
-     
-    },
-    {
-      name: "Nissan GT-R",
-      type: "Gasoline",
-      image: "/images/p2.png",
-      fuelCapacity: "60L",
-      transmission: "Manual",
-      capacity: "2 People",
-      price: 80.00,
-      favoriteIcon: "/images/heart.png",
-    },
-    {
-      name: "Rolls-Royce",
-      type: "Gasoline",
-      image: "/images/p3.png",
-      fuelCapacity: "70L",
-      transmission: "Manual",
-      capacity: "4 People",
-      price: 150,
-      favoriteIcon: "/images/red.png",
-    },
-    {
-      name: "Mercedes-Benz E-Class",
+      id: 1,
+      name: "Haval HEV",
+      price: 80,
+      image: "/images/haval.png",
       type: "Hybrid",
-      image: "/images/p4.png",
+      fuelCapacity: "30L",
+      transmission: "Automatic",
+      capacity: "5People",
+      favoriteIcon: "/images/heart.png"
+    },
+    {
+      id: 2,
+      name: "BMW X5",
+      price: 50,
+      image: "/images/bmw23.png",
+      type: "Diesel",
       fuelCapacity: "55L",
       transmission: "Manual",
-      capacity: "2 People",
-      price: 130,
-      favoriteIcon: "/images/heart.png",
+      capacity: "4People",
+      favoriteIcon: "/images/heart.png"
     },
+    {
+      id: 3,
+      name: "Audi E-Tron GT",
+      price: 90,
+      image: "/images/p4.png",
+      type: "Electric",
+      fuelCapacity: "30KWH",
+      transmission: "Automatic",
+      capacity: "5People",
+      favoriteIcon: "/images/heart.png"
+    },
+    {
+      id: 4,
+      name: "Changan OSHAN X7",
+      price: 75,
+      image: "/images/oshanx7.png",
+      type: "Hybrid",
+      fuelCapacity: "60L",
+      transmission: "Automatic",
+      capacity: "5People",
+      favoriteIcon: "/images/heart.png"
+    },
+     
+    
   ];
 
   return (
